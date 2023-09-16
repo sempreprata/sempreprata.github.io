@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produtos Disponíveis</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="Sempre Prata.png" alt="Logo da Minha Loja" class="logo">
+        <h1>Produtos Disponíveis</h1>
+    </div>
+
+    <div class="customer-info">
+        <table>
+            <tr>
+                <td><label for="customer-name">Nome:</label></td>
+                <td><input type="text" id="customer-name" name="customer-name" required></td>
+            </tr>
+            <tr>
+                <td><label for="customer-street">Rua:</label></td>
+                <td><input type="text" id="customer-street" name="customer-street" required></td>
+            </tr>
+            <tr>
+                <td><label for="customer-number">Número:</label></td>
+                <td><input type="text" id="customer-number" name="customer-number" required></td>
+            </tr>
+            <tr>
+                <td><label for="customer-neighborhood">Bairro:</label></td>
+                <td><input type="text" id="customer-neighborhood" name="customer-neighborhood" required></td>
+            </tr>
+            <tr>
+                <td><label for="customer-cep">CEP:</label></td>
+                <td><input type="text" id="customer-cep" name="customer-cep" required></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container">
+        <form id="order-form">
+            
+            <div class="product">
+                <img src="PXL_20230909_231101845.jpg" alt="Argola" onclick="openFullscreenView('PXL_20230909_231101845.jpg')">
+                <div class="product-description">
+                    <h3>Argola</h3>
+                    <p>Argola redonda aro torçido PP.</p>
+                    <p>Preço: R$20,78</p>
+                    <label for="product1-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="20.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230909_211802529.jpg" alt="Argola"> 
+                <div class="product-description">
+                    <h3>Argola</h3>
+                    <p>Argola aro torçido G.</p>
+                    <p>Preço: R$28,78</p>
+                    <label for="product2-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="28.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="IMG-20230904-WA0025.jpg" alt="Argola">
+                <div class="product-description">
+                    <h3>Argola</h3>
+                    <p>Argola coração aro quadrado M.</p>
+                    <p>Preço: R$28,78</p>
+                    <label for="product3-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="28.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="IMG_20230903_172801404.jpg" alt="Argola">
+                <div class="product-description">
+                    <h3>Argola</h3>
+                    <p>Argola aro quadrado quadrado M.</p>
+                    <p>Preço: R$32,78</p>
+                    <label for="product4-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="32.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230909_195830689.jpg" alt="Corrente">
+                <div class="product-description">
+                    <h3>Corrente</h3>
+                    <p>Corrente Elo Port. 45cm M.</p>
+                    <p>Preço: R$66,78</p>
+                    <label for="product5-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="66.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230830_144335713.jpg" alt="Anel">
+                <div class="product-description">
+                    <h3>Anel</h3>
+                    <p>Anel coroa zircônia cristal.</p>
+                    <p>Preço: R$71,89</p>
+                    <label for="product7-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="71.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230909_230646269.jpg" alt="Anel">
+                <div class="product-description">
+                    <h3>Anel</h3>
+                    <p>Anel zircônia cristal.</p>
+                    <p>Preço: R$39,89</p>
+                    <label for="product8-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="39.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230830_144937476.jpg" alt="Anel">
+                <div class="product-description">
+                    <h3>Anel</h3>
+                    <p>Anel com bolinhas indiano zircônia cristal.</p>
+                    <p>Preço: R$41,89</p>
+                    <label for="product9-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="41.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230909_221153596.jpg" alt="Brinco">
+                <div class="product-description">
+                    <h3>Brinco</h3>
+                    <p>Brinco zircônia cristal 2MM.</p>
+                    <p>Preço: R$11,89</p>
+                    <label for="product10-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="11.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230909_215830691.jpg" alt="Brinco">
+                <div class="product-description">
+                    <h3>Brinco</h3>
+                    <p>Brinco bola.</p>
+                    <p>Preço: R$12,78</p>
+                    <label for="product11-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="12.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230909_213618743.jpg" alt="Brinco">
+                <div class="product-description">
+                    <h3>Brinco</h3>
+                    <p>Brinco baby zircônia cristal.</p>
+                    <p>Preço: R$20,78</p>
+                    <label for="product12-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="20.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="PXL_20230909_221836755.jpg" alt="Brinco">
+                <div class="product-description">
+                    <h3>Brinco</h3>
+                    <p>Brinco zircônia cristal 5MM.</p>
+                    <p>Preço: R$18,78</p>
+                    <label for="product13-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="18.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="IMG_20230903_181936488(1).jpg" alt="Piercing">
+                <div class="product-description">
+                    <h3>Piercing</h3>
+                    <p>Piercing fake 3 fios.</p>
+                    <p>Preço: R$22,78</p>
+                    <label for="product14-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="22.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="IMG_20230903_202235222.jpg" alt="Piercing">
+                <div class="product-description">
+                    <h3>Piercing</h3>
+                    <p>Piercing fake coração.</p>
+                    <p>Preço: R$20,78</p>
+                    <label for="product15-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="22.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+            <div class="product">
+                <img src="PXL_20230909_215126097.jpg" alt="Brinco">
+                <div class="product-description">
+                    <h3>Brinco</h3>
+                    <p>Brinco coração pequeno.</p>
+                    <p>Preço: R$30,78</p>
+                    <label for="product16-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="30.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+            <div class="product">
+                <img src="IMG_20230903_203122531(1).jpg" alt="Anel">
+                <div class="product-description">
+                    <h3>Falange</h3>
+                    <p>Falange coroa.</p>
+                    <p>Preço: R$43,89</p>
+                    <label for="product17-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="43.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+            <div class="product">
+                <img src="IMG_20230903_190229197(1).jpg" alt="Piercing">
+                <div class="product-description">
+                    <h3>Piercing</h3>
+                    <p>Piercing trançado fino.</p>
+                    <p>Preço: R$18,78</p>
+                    <label for="product18-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="18.78" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+            <div class="product">
+                <img src="PXL_20230909_232039094.jpg" alt="Piercing">
+                <div class="product-description">
+                    <h3>Piercing</h3>
+                    <p>Piercing Trançado.</p>
+                    <p>Preço: R$17,89</p>
+                    <label for="product19-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="17.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+            <div class="product">
+                <img src="Ping rosa.png" alt="Pingente">
+                <div class="product-description">
+                    <h3>Pingente</h3>
+                    <p>Pingente gota 6mm Rosa.</p>
+                    <p>Preço: R$19,89</p>
+                    <label for="product20-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="19.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+            <div class="product">
+                <img src="Ping verde.png" alt="Pingente">
+                <div class="product-description">
+                    <h3>Pingente</h3>
+                    <p>Pingente gota 4mm Verde água.</p>
+                    <p>Preço: R$21,46</p>
+                    <label for="product21-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="21.46" name="product-quantity" value="0"
+                        min="0" max="2">
+                </div>
+            </div>
+        <div class="product">
+            <img src="Ping azul.png" alt="Pingente">
+            <div class="product-description">
+                <h3>Pingente</h3>
+                <p>Pingente gota 4mm Azul claro.</p>
+                <p>Preço: R$21,46</p>
+                <label for="product22-quantity">Quantidade:</label>
+                <input type="number" class="quantity-input" data-price="21.46" name="product-quantity" value="0"
+                    min="0" max="2">
+            </div>
+        </div>
+    <div class="product">
+        <img src="Ping gota cristal.png" alt="Pingente">
+        <div class="product-description">
+            <h3>Pingente</h3>
+            <p>Pingente gota 4mm Cristal.</p>
+            <p>Preço: R$21,46</p>
+            <label for="product23-quantity">Quantidade:</label>
+            <input type="number" class="quantity-input" data-price="21.46" name="product-quantity" value="0"
+                min="0" max="1">
+        </div>
+    </div>
+    <div class="product">
+        <img src="Ping redondo cristal.png" alt="Pingente">
+        <div class="product-description">
+            <h3>Pingente</h3>
+            <p>Pingente redondo 4mm Cristal.</p>
+            <p>Preço: R$18,78</p>
+            <label for="product24-quantity">Quantidade:</label>
+            <input type="number" class="quantity-input" data-price="18.78" name="product-quantity" value="0"
+                min="0" max="2">
+        </div>
+    </div>
+    <div class="product">
+        <img src="Ping preto.png" alt="Pingente">
+        <div class="product-description">
+            <h3>Pingente</h3>
+            <p>Pingente redondo 6mm Preto.</p>
+            <p>Preço: R$23,89</p>
+            <label for="product25-quantity">Quantidade:</label>
+            <input type="number" class="quantity-input" data-price="23.89" name="product-quantity" value="0"
+                min="0" max="2">
+        </div>
+    </div>
+            <div class="product">
+                <img src="PXL_20230909_205345738.PORTRAIT.jpg" alt="Brinco">
+                <div class="product-description">
+                    <h3>Brinco</h3>
+                    <p>Brinco Búzios.</p>
+                    <p>Preço: R$23,89</p>
+                    <label for="product25-quantity">Quantidade:</label>
+                    <input type="number" class="quantity-input" data-price="23.89" name="product-quantity" value="0"
+                        min="0" max="1">
+                </div>
+            </div>
+          
+
+            <input type="submit" value="Enviar Pedido para WhatsApp">
+        </form>
+    </div>
+
+    <div id="fullscreen-view">
+        <img id="fullscreen-image" src="" alt="Imagem em Tela Cheia">
+        <span id="close-button" onclick="closeFullscreenView()">Fechar</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
