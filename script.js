@@ -19,49 +19,36 @@ productImages.forEach(function (img) {
     });
 });
 
-document.getElementById('order-form').addEventListener('submit', function (e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    // Função para enviar o pedido para o WhatsApp com base na opção selecionada
+    function sendWhatsAppMessage() {
+        const selectedContact = document.getElementById('contact-list').value;
+        const customerName = document.getElementById('customer-name').value;
+        const customerStreet = document.getElementById('customer-street').value;
+        const customerNumber = document.getElementById('customer-number').value;
+        const customerNeighborhood = document.getElementById('customer-neighborhood').value;
+        const customerCep = document.getElementById('customer-cep').value;
 
-    // Inicialize o valor total como 0
-    let total = 0;
+        // Construa a mensagem com os detalhes do pedido
+        let whatsappMessage = `Pedido de ${customerName}:\n`;
+        whatsappMessage += `Rua: ${customerStreet}\n`;
+        whatsappMessage += `Número: ${customerNumber}\n`;
+        whatsappMessage += `Bairro: ${customerNeighborhood}\n`;
+        whatsappMessage += `CEP: ${customerCep}\n`;
 
-    // Selecione todos os inputs de quantidade com a classe "quantity-input"
-    const quantityInputs = document.querySelectorAll('.quantity-input');
+        // Adicione a informação do contato selecionado
+        whatsappMessage += `Contato: ${selectedContact}\n`;
 
-    // Obtenha o nome e as novas informações do cliente
-    const customerName = document.getElementById('customer-name').value;
-    const customerStreet = document.getElementById('customer-street').value;
-    const customerNumber = document.getElementById('customer-number').value;
-    const customerNeighborhood = document.getElementById('customer-neighborhood').value;
-    const customerCep = document.getElementById('customer-cep').value;
+        // ... Restante do código para calcular o total e adicionar produtos
 
+        // Redirecione para o WhatsApp
+        const whatsappURL = `https://api.whatsapp.com/send?phone=${selectedContact}&text=${encodeURIComponent(whatsappMessage)}`;
+        window.location.href = whatsappURL;
+    }
 
-
-    // Gere a mensagem com os detalhes do pedido, incluindo as novas informações
-    let whatsappMessage = `Pedido de ${customerName}:\n`;
-    whatsappMessage += `Rua: ${customerStreet}\n`;
-    whatsappMessage += `Número: ${customerNumber}\n`;
-    whatsappMessage += `Bairro: ${customerNeighborhood}\n`;
-    whatsappMessage += `CEP: ${customerCep}\n`;
-
-    quantityInputs.forEach(function (input, index) {
-        const quantity = parseInt(input.value);
-        const price = parseFloat(input.getAttribute('data-price'));
-
-        // Verifique se a quantidade é maior que zero antes de adicionar ao total
-        if (quantity > 0) {
-            total += price * quantity;
-            const productName = input.closest('.product').querySelector('h3').textContent;
-            whatsappMessage += `${productName}: ${quantity} unidades\n`;
-        }
+    // Adicione um ouvinte de evento para o envio do formulário
+    document.getElementById('order-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        sendWhatsAppMessage(); // Chame a função para enviar a mensagem do WhatsApp
     });
-
-    whatsappMessage += `Total: R$${total.toFixed(2)}`;
-
-    // Substitua SEU_NUMERO_DE_TELEFONE pelo seu número de WhatsApp
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappURL = `https://api.whatsapp.com/send?phone=5551995315138&text=${encodedMessage}`;
-
-    // Redirecione para o WhatsApp
-    window.location.href = whatsappURL;
 });
