@@ -29,22 +29,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const customerNeighborhood = document.getElementById('customer-neighborhood').value;
         const customerCep = document.getElementById('customer-cep').value;
 
-        // Gere a mensagem com os detalhes do pedido, excluindo o número de telefone
-        let whatsappMessage = `Pedido de ${customerName}:\n`;
-        whatsappMessage += `Rua: ${customerStreet}\n`;
-        whatsappMessage += `Número: ${customerNumber}\n`;
-        whatsappMessage += `Bairro: ${customerNeighborhood}\n`;
-        whatsappMessage += `CEP: ${customerCep}\n`;
-
         // Selecione todos os produtos com a classe "product"
         const products = document.querySelectorAll('.product');
 
         // Inicialize o valor total como 0
         let total = 0;
 
-        products.forEach(function (product, index) {
+        // Construa a mensagem com os detalhes do pedido
+        let whatsappMessage = `Pedido de ${customerName}:\n`;
+        whatsappMessage += `Rua: ${customerStreet}\n`;
+        whatsappMessage += `Número: ${customerNumber}\n`;
+        whatsappMessage += `Bairro: ${customerNeighborhood}\n`;
+        whatsappMessage += `CEP: ${customerCep}\n\n`;
+
+        products.forEach(function (product ) {
             const productName = product.querySelector('h3').textContent;
-            const productDescription = product.querySelector('p[data-description]').getAttribute('data-description');
             const quantityInput = product.querySelector('.quantity-input');
             const quantity = parseInt(quantityInput.value);
             const price = parseFloat(quantityInput.getAttribute('data-price'));
@@ -52,15 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
             // Verifique se a quantidade é maior que zero antes de adicionar ao total
             if (quantity > 0) {
                 total += price * quantity;
-                whatsappMessage += `${productName} (${productDescription}): ${quantity} unidades\n`;
+                whatsappMessage += `${productName} - Quantidade: ${quantity} - Preço: R$${(price * quantity).toFixed(2)}\n`;
             }
         });
 
-        whatsappMessage += `Total: R$${total.toFixed(2)}`;
+        whatsappMessage += `\nTotal: R$${total.toFixed(2)}`;
 
         // Redirecione para o WhatsApp
         const whatsappURL = `https://api.whatsapp.com/send?phone=${selectedContact}&text=${encodeURIComponent(whatsappMessage)}`;
-        window.open(whatsappURL, '_blank'); // Abra o link em uma nova aba/janela
+        window.location.href = whatsappURL;
     }
 
     // Adicione um ouvinte de evento para o envio do formulário
